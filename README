@@ -1,0 +1,63 @@
+# /* ****************************************************************** **
+# **  OpenBRAIN - OpenSees for Bridge Reliability Analysis In Networks  **
+# **                                                                    **
+# **                                                                    **
+# ** (C) Copyright 2017, Graziano Fiorillo. All Rights Reserved.        **
+# **                                                                    **
+# **                                                                    **
+# ** Commercial use of this program without express permission of the   **
+# ** copyright holder, is strictly prohibited.                          **
+# ** See file 'LICENSE' in main directory for information on usage and  **
+# ** redistribution,  and for a DISCLAIMER OF ALL WARRANTIES.           **
+# **                                                                    **
+# ** Developed by:                                                      **
+# **   Graziano Fiorillo (grzf.research@gmail.com)                      **
+# **                                                                    **
+# ** ****************************************************************** */
+
+INTRODUCTION
+
+OpenBRAIN - OpenSees for Bridge Reliability Analysis In Networks is a 
+Message Passage Interface (MPI) software designed for research purposes about 
+the structural reliability of typical highway girder and adjacent boxes bridges
+in a UNIX environment using the C++ programming lenguage. 
+To operate, it requires the installation of the following third party libraries:
+
+GNU Compiler Collection, gcc				https://gcc.gnu.org/
+GNU Compiler Collection, gfortran			https://gcc.gnu.org/
+GNU Scientific Library (GSL)				https://www.gnu.org/software/gsl/
+OpenMPI - Open Source High Performance Computing 	https://www.open-mpi.org/
+OpenSees Framework Libraries				http://opensees.berkeley.edu/OpenSees/developer/svn.php
+
+Documentation and installation procedures for the above libraries are not 
+included in this package. The user should contact directly the developer 
+of each library for assistance.
+
+INSTALLATION
+
+The software should be installed on computational machines running Linux OS
+after the installation of the above dependencies using the MakefileMPI
+provided with the package. The MakefileMPI to be modified substituing the
+name "user directory" with the local path to the directories containing 
+headers and dependent libraries respectively.
+
+RUNNING THE PROGRAM
+
+OpenBRAIN can run in the local folder where it is compiled using the shell
+script "Input_Batch.sh" included within the package. The shell file contains 
+a simple description of the input required by the program. 
+
+The file generates an output that is directed to a text file "OUTPUT_NAME.dat"
+if the operator ">" is included in the string, otherwise the output is sent to
+the console screen.
+  
+The output file contains information about the section capacity of the bridge,
+a sample of bridge responces fro each failure mode, and the reliability index
+for each failure mode. The file "TestOutput.dat" contains the result of the 
+analysis for the input string listed "Input_Batch.sh".
+
+A more detailed manual of operation is currently under development and will be
+uploaded to the repository soon.
+
+Please send your request for information, feedbacks, and bug reports 
+to: grzf.research@gmail.com

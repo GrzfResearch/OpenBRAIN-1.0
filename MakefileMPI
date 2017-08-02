@@ -1,0 +1,61 @@
+# COMPILER
+CXX = mpic++
+# FLAGS (Warning All; Debugging)
+CXXFLAGS = -Wall -g 
+# INCLUDES DIR
+IDIR = -I/usr/local/include \
+       -I/"user directory"/OpenSees/Headers 
+
+# FILES CPP
+FCPP = main.cpp IL_Class.cpp \
+       IL_infline.cpp \
+       IL_matrix.cpp \
+       Probfailure.cpp
+#
+OBJS = $(FCPP:.c=.o)       
+# LINK
+L1 = -L/"user directory"/lib
+L2 = -L/"user directory"/OpenSees/lib
+L3 = -L/"user directory"/gcc/"user directory"/
+      
+# FILE L1
+FL1 = -lgsl -lgslcblas -lm  			
+FL2 = -lOpenSees -lSuperLU -lLapack -lBlas -lCBlas
+FL3 = -lgfortran
+#
+# TARGET FILE NAME
+TARG = OpenBRAIN.exe
+#
+#$(TARG):
+#	$(CXX) $(CXXFLAGS) $(IDIR) -o $(TARG) $(MAIN_FILE) $(FCPP) $(L1) $(FL1)
+#$(L2) $(FL2) $(L3) $(FL3)
+#
+$(TARG): $(OBJ)
+	$(CXX) $(CXXFLAGS) $(IDIR) -o $(TARG) $(OBJS) $(L1) $(FL1) $(L2) $(FL2) $(L3) $(FL3)
+#
+OBJS:	%.cpp 
+	$(CXX) $(CXXFLAGS) -c $< 
+#
+clean:
+	rm -f *.o $(TARG)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
